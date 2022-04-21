@@ -156,7 +156,8 @@
                               $user_comment_count = DB::table('comments')->where('user_id','=',Auth::user()->id)->count();
                             
                             ?>
-                            
+                            @else
+                              <?php $user_comment_count=0 ?>
                             @endauth
                             <?php
                               if($user_comment_count > 0)
